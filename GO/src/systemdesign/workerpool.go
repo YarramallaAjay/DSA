@@ -5,13 +5,6 @@ import (
 	"sync"
 )
 
-type WorkerPool struct {
-	PoolSize int
-	Task     *func()
-	wg       *sync.WaitGroup
-	mx       *sync.Mutex
-}
-
 type Job struct {
 	Id    int
 	Value int
@@ -88,6 +81,6 @@ func main() {
 	var jobsCount int = 100
 	var workerCount int = 5
 
-	Dispatcher(jobsCount, workerCount)
+	ImageDispatcher(jobsCount, workerCount)
 
 }
