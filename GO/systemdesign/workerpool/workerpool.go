@@ -1,4 +1,4 @@
-package main
+package workerpool
 
 import (
 	"fmt"
@@ -73,14 +73,5 @@ func Dispatcher(jobsCount int, workersCount int) {
 	close(results)
 
 	resultWg.Wait()
-
-}
-
-func main() {
-
-	var jobsCount int = 100
-	var workerCount int = 5
-
-	ImageDispatcher(jobsCount, workerCount)
 
 }
